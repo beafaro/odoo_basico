@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-
+<!--
     <record model="ir.ui.view" id="odoo_basico.list">
       <field name="name">odoo_basico list</field>
       <field name="model">odoo_basico.odoo_basico</field>
@@ -13,7 +13,7 @@
         </tree>
       </field>
     </record>
-
+-->
 
     <!-- actions opening views on models -->
 
@@ -22,7 +22,6 @@
       <field name="res_model">odoo_basico.odoo_basico</field>
       <field name="view_mode">tree,form</field>
     </record>
-
 
     <!-- server action to the one above -->
 <!--
