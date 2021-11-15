@@ -9,11 +9,11 @@ class informacion(models.Model):
 
     name = fields.Char(string="Título")
     descripcion = fields.Text(string="A descripción")
-    alto = fields.Integer(string="Alto en centimetros")
-    largo = fields.Integer(string="Largo en centimetros")
-    ancho = fields.Integer(string="Ancho en centimetros")
+    alto = fields.Integer(string="Alto en centímetros")
+    largo = fields.Integer(string="Largo en centímetros")
+    ancho = fields.Integer(string="Ancho en centímetros")
     volumen = fields.Float(string="Volumen")
-    peso = fields.Float(string="Peso en Kg's")
+    peso = fields.Float(string="Peso en Kg's", default=2.7, digits=(6,2))
     densidad = fields.Float(string="Densidad")
     autorizado = fields.Boolean(string="¿Autorizado?", default=True)
 
