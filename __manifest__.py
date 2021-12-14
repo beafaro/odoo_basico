@@ -25,6 +25,8 @@
     # always loaded
     'data': [
         'views/informacion.xml',
+        'views/pedido.xml',
+        'views/lineapedido.xml',
         'views/suceso.xml',
         'views/templates.xml',
         'views/menu.xml',
