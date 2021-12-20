@@ -59,3 +59,6 @@ class informacion(models.Model):
         for rexistro in self:
             if rexistro.peso < 1 or rexistro.peso > 4:
                 raise ValidationError('O peso de %s ten que ser entre 1 e 4 ' % rexistro.name)
+
+    def _cambia_campo_sexo(self, rexistro):
+        rexistro.sexo_traducido = "Hombre"
