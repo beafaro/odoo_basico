@@ -1,7 +1,7 @@
 <odoo>
     <record id="paperformat_euro_portrait" model="report.paperformat">
         <field name="name">European A4 Portrait</field>
-        <field name="default" eval="True" />
+        <field name="default" eval="True"/>
         <field name="format">A4</field>
         <field name="page_height">0</field>
         <field name="page_width">0</field>
@@ -10,14 +10,14 @@
         <field name="margin_bottom">23</field>
         <field name="margin_left">15</field>
         <field name="margin_right">15</field>
-        <field name="header_line" eval="True" />
+        <field name="header_line" eval="True"/>
         <field name="header_spacing">35</field>
         <field name="dpi">90</field>
     </record>
 
     <record id="paperformat_euro_landscape" model="report.paperformat">
         <field name="name">European A4 Landscape</field>
-        <field name="default" eval="True" />
+        <field name="default" eval="True"/>
         <field name="format">A4</field>
         <field name="page_height">0</field>
         <field name="page_width">0</field>
@@ -26,7 +26,7 @@
         <field name="margin_bottom">23</field>
         <field name="margin_left">7</field>
         <field name="margin_right">7</field>
-        <field name="header_line" eval="True" />
+        <field name="header_line" eval="True"/>
         <field name="header_spacing">35</field>
         <field name="dpi">90</field>
     </record>
@@ -39,14 +39,42 @@
     />
 
     <template id="report_informacion_template">
-       <t t-call="web.html_container">
+        <t t-call="web.html_container">
             <t t-call="web.external_layout">
                 <div class="page">
                     <div class="container">
-
+                        <table class="table table-sm">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th class="text-left">Titulo(name)</th>
+                                    <th class="text-left">Peso</th>
+                                    <th class="text-left">Autorizado</th>
+                                    <!--                                    <th class="text-left">Datas</th>-->
+                                    <th class="text-left">Sexo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="suma_peso" t-value="0"/>
+                                <t t-foreach="docs" t-as="o">
+                                    <tr>
+                                        <td class="text-left">
+                                            <h5>
+                                                <span t-field="o.name"/>
+                                            </h5>
+                                        </td>
+                                        <td class="text-left">
+                                            <span t-field="o.peso"/>
+                                            <t t-if="o.peso &gt; 3">
+                                                <t t-set="suma_peso" t-value="suma_peso + o.peso"/>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </t>
-       </t>
+        </t>
     </template>
 </odoo>
