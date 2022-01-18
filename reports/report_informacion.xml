@@ -70,6 +70,8 @@
                                         </td>
                                     </tr>
                                 </t>
+                                <td class="text-left"><span>Suma de pesos maior a 3</span></td>
+                                <td class="text-left"><span t-esc="suma_peso"/></td>
                             </tbody>
                         </table>
                     </div>
