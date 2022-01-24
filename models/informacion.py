@@ -3,6 +3,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from odoo.exceptions import Warning
+import os
 
 
 class informacion(models.Model):
@@ -68,7 +69,6 @@ class informacion(models.Model):
         for rexistro in self:
             # Ao usar warning temos que importar a libreria mediante from odoo.exceptions import Warning
             # Importamos tamén a libreria os mediante import os
-            raise Warning(
-                'Contexto: %s ' % (rexistro.env.context))
+            raise Warning('Contexto: %s Ruta: %s Contido do directorio %s' % (rexistro.env.context, os.getcwd(),os.listdir(os.getcwd())))
             # env.context é un diccionario  https://www.w3schools.com/python/python_dictionaries.asp
         return True
