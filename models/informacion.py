@@ -134,7 +134,7 @@ class informacion(models.Model):
         # Definimos en miñasUtilidades un método para asignar o distinto literal que ten o idioma en función da plataforma Windows ou GNULinux
         locale.setlocale(locale.LC_TIME, miñasUtilidades.cadeaTextoSegunPlataforma('Spanish_Spain.1252', 'es_ES.utf8'))
         for rexistro in self:
-            rexistro.mes_castelan = rexistro.data_hora.strftime("%B")  # strftime https://strftime.org/
+            rexistro.mes_castelan = rexistro.data.strftime("%B")  # strftime https://strftime.org/
 
     @api.depends('data')
     def _mes_galego(self):
@@ -144,5 +144,5 @@ class informacion(models.Model):
         # Definimos en miñasUtilidades un método para asignar o distinto literal que ten o idioma en función da plataforma Windows ou GNULinux
         locale.setlocale(locale.LC_TIME, miñasUtilidades.cadeaTextoSegunPlataforma('Galician_Spain.1252', 'gl_ES.utf8'))
         for rexistro in self:
-            rexistro.mes_galego = rexistro.data_hora.strftime("%B")
+            rexistro.mes_galego = rexistro.data.strftime("%B")
         locale.setlocale(locale.LC_TIME, miñasUtilidades.cadeaTextoSegunPlataforma('Spanish_Spain.1252', 'es_ES.utf8'))
