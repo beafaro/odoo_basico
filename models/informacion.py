@@ -43,8 +43,8 @@ class informacion(models.Model):
     hora_utc = fields.Char(compute="_hora_utc", string="Hora UTC", size=15, store=True)
     hora_timezone_usuario = fields.Char(compute="_hora_timezone_usuario", string="Hora Timezone do Usuario", size=15, store=True)
     hora_actual = fields.Char(compute="_hora_actual", string="Hora Actual", size=15, store=True)
-    mes_castelan = fields.Char(compute="_hora_actual", string="Mes Castelán", size=15, store=True)
-    mes_galego = fields.Char(compute="_hora_actual", string="Mes Galego", size=15, store=True)
+    mes_castelan = fields.Char(compute="_mes_castelan", string="Mes Castelán", size=15, store=True)
+    mes_galego = fields.Char(compute="_mes_galego", string="Mes Galego", size=15, store=True)
 
 
     @api.depends('alto_en_cms', 'longo_en_cms', 'ancho_en_cms')
@@ -126,7 +126,7 @@ class informacion(models.Model):
     # dpkg-reconfigure locales (podemos configurar varios)
     # locale (ver o locale por defecto)
     # locale -a (ver os dispoñibles)
-    @api.depends('data_hora')
+    @api.depends('data')
     def _mes_castelan(self):
         # O idioma por defecto é o configurado en locale na máquina onde se executa odoo.
         # Podemos cambialo con locale.setlocale, os idiomas teñen que estar instalados na máquina onde se executa odoo.
@@ -136,7 +136,7 @@ class informacion(models.Model):
         for rexistro in self:
             rexistro.mes_castelan = rexistro.data_hora.strftime("%B")  # strftime https://strftime.org/
 
-    @api.depends('data_hora')
+    @api.depends('data')
     def _mes_galego(self):
         # O idioma por defecto é o configurado en locale na máquina onde se executa odoo.
         # Podemos cambialo con locale.setlocale, os idiomas teñen que estar instalados na máquina onde se executa odoo.

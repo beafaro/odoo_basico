@@ -72,14 +72,19 @@
                             </page>
                             <page string="Date e Hora">
                                 <group>
+                                    <group>
                                     <field name="data"/>
                                     <field name="data_hora"/>
                                     <field name="hora_utc"/>
                                     <field name="hora_timezone_usuario"/>
+                                </group>
+                                <group>
                                     <field name="hora_actual"/>
                                     <field name="mes_castelan"/>
                                     <field name="mes_galego"/>
                                 </group>
+                                </group>
+
                             </page>
                             <page string="Datos Numéricos">
                                 <group>
