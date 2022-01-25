@@ -24,6 +24,13 @@
                     <field name="densidade"/>
                     <field name="autorizado"/>
                     <field name="sexo_traducido"/>
+                    <field name="data"/>
+                    <field name="data_hora"/>
+                    <field name="hora_utc"/>
+                    <field name="hora_timezone_usuario"/>
+                    <field name="hora_actual"/>
+                    <field name="mes_castelan"/>
+                    <field name="mes_galego"/>
                 </tree>
             </field>
         </record>
@@ -48,6 +55,8 @@
                 <form string="Formulario Informacion">
                     <header>
                         <button name="ver_contexto" type="object" string="Ver Contexto"/>
+                        <button name="actualiza_hora_actual_UTC" type="object" string="Actualiza Hora Actual a UTC"/>
+                        <button name="actualiza_hora_timezone_usuario_dende_boton_e_apidepends" type="object" string="Actualiza Hora a Timezone do Usuario"  class="oe_highlight"/>
                     </header>
                     <sheet>
                         <group>
@@ -59,6 +68,17 @@
                                     <field name="descripcion"/>
                                     <field name="autorizado"/>
                                     <field name="sexo_traducido"/>
+                                </group>
+                            </page>
+                            <page string="Date e Hora">
+                                <group>
+                                    <field name="data"/>
+                                    <field name="data_hora"/>
+                                    <field name="hora_utc"/>
+                                    <field name="hora_timezone_usuario"/>
+                                    <field name="hora_actual"/>
+                                    <field name="mes_castelan"/>
+                                    <field name="mes_galego"/>
                                 </group>
                             </page>
                             <page string="Datos Numéricos">
@@ -88,10 +108,10 @@
                             </page>
                             <page string="Datos Binary">
                                 <group>
-                                     <field name="adxunto_nome" invisible="1"/>
-                                     <field name="adxunto" filename="adxunto_nome"/>
-                                     <field name="foto" widget="image" class="oe_avatar"/>
-                                     <field name="foto" widget="image"/>
+                                    <field name="adxunto_nome" invisible="1"/>
+                                    <field name="adxunto" filename="adxunto_nome"/>
+                                    <field name="foto" widget="image" class="oe_avatar"/>
+                                    <field name="foto" widget="image"/>
                                 </group>
                             </page>
                         </notebook>
@@ -131,7 +151,8 @@
             <field name="active">true</field>
             <field name="sort">[]</field>
             <field name="domain">['|','&amp;',('autorizado', '=', False),('sexo_traducido', '=', 'Mujer'),('name',
-                '=','Rexistro 3' )]</field><!-- Aquí iría o filtro -->
+                '=','Rexistro 3' )]
+            </field><!-- Aquí iría o filtro -->
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
             <field name="action_id"
                    eval="ref('odoo_basico.informacion_list_action')"/><!-- Obtemos o id a partir do id externo-->
