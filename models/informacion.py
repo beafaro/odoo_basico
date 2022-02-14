@@ -163,3 +163,5 @@ class informacion(models.Model):
         mail_id = self.env['mail.mail'].create(mail_valores)
         mail_id.sudo().send()
         return True
+
+    #https://github.com/dwccdiw/odoo_basico
