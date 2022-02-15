@@ -32,6 +32,7 @@
         'reports/report_header.xml',
         'reports/report_informacion.xml',
         'views/menu.xml',
+        'views/persoa.xml',
         'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
