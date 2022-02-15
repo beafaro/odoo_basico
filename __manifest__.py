@@ -29,10 +29,10 @@
         'views/lineapedido.xml',
         'views/suceso.xml',
         'views/templates.xml',
-        'reports/report_header.xml',
-        'reports/report_informacion.xml',
         'views/menu.xml',
         'views/persoa.xml',
+        'reports/report_header.xml',
+        'reports/report_informacion.xml',
         'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode

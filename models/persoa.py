@@ -1,7 +1,6 @@
-from odoo import fields
+# -*- coding: utf-8 -*-
 
-import models
-
+from odoo import models, fields, api
 
 class persoa(models.Model):
     _inherit = 'res.partner'  # como  non lle proporcioamos  _name facemos herdanza por extensión (herdanza de clase)
