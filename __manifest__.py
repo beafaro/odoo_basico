@@ -35,6 +35,7 @@
         'reports/report_informacion.xml',
         'accions_planificadas/accion_planificada.xml',
         'security/ir.model.access.csv',
+        'security/xestion_usuarios.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
